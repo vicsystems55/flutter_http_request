@@ -2,7 +2,7 @@
     package="com.example.httpz">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="Http"
+        android:label="Pecece"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

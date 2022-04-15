@@ -47,17 +47,39 @@ class _HomePageState extends State<HomePage> {
           child: ListView.builder(
               itemCount: posts?.length,
               itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    Image.network('${posts![index].featuredImage}'),
-                    Card(
-                      child: ListTile(
-                        title: Text('${posts![index].postTitle}??' ''),
-                        subtitle: Text('${posts![index].postDescription}'),
+                return GestureDetector(
+                  onTap: (){
+
+                    Navigator.push(
+                                   context,
+                                   MaterialPageRoute(builder: (context)=>
+                                   PostPage(
+                                     image: '${posts![index].featuredImage}',
+                                     title: '${posts![index].postTitle}??' '',
+                                     description: '${posts![index].postDescription}',
+                                     body: '${posts![index].postBody}',
+
+                                   )
+                                   )
+                                 );
+
+
+                  },
+                  child: Column(
+                    children: [
+                     
+                      Hero(
+                        tag: 'pi',
+                        child: Image.network('${posts![index].featuredImage}')),
+                      Card(
+                        child: ListTile(
+                          title: Text('${posts![index].postTitle}??' ''),
+                          subtitle: Text('${posts![index].postDescription}'),
+                        ),
                       ),
-                    ),
-                    Text('${posts![index]}')
-                  ],
+                      Text('${posts![index]}')
+                    ],
+                  ),
                 );
               }),
           replacement: Center(
