@@ -56,6 +56,7 @@ class _HomePageState extends State<HomePage> {
                                    PostPage(
                                      image: '${posts![index].featuredImage}',
                                      title: '${posts![index].postTitle}??' '',
+
                                      description: '${posts![index].postDescription}',
                                      body: '${posts![index].postBody}',
 
@@ -66,6 +67,7 @@ class _HomePageState extends State<HomePage> {
 
                   },
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                      
                       Hero(
@@ -77,7 +79,10 @@ class _HomePageState extends State<HomePage> {
                           subtitle: Text('${posts![index].postDescription}'),
                         ),
                       ),
-                      Text('${posts![index]}')
+                      
+                      Text('${posts![index].postAuthors?.name}'),
+
+                      Text('${posts![index].postCategories?.name}')
                     ],
                   ),
                 );
